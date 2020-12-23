@@ -144,7 +144,7 @@ public class GravityGun : MonoBehaviour {
                     if (hit.transform.TryGetComponent(out ExplosiveBarrel ex)) {
                         ex.Explode();
                     } else {
-                        ThrowInternal(heldObject);
+                        ThrowInternal(hit.rigidbody);
                     }
                     source.PlayOneShot(fire[Random.Range(0, fire.Length)]);
                     return;
